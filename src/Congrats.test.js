@@ -20,7 +20,7 @@ describe('Congrats', () => {
 
   it('renders no empty congrats when success prop is true', () => {
     wrapper.setProps({ success: true })
-    const msg = wrapper.findByTestAttr('congrats-message')
+    const msg = findByTestAttr(wrapper, 'congrats-message')
     expect(msg.text().length).not.toBe(0)
   })
 })
