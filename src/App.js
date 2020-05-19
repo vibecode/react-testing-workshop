@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
-import './App.css'
+import React from 'react'
+import GuessedWords from './GuessedWords'
+import Congrats from './Congrats'
 
 function App() {
-  const [counter, setCounter] = useState(0)
-
-  const handleIncrement = () => setCounter((state) => state + 1)
-
   return (
     <div className="App" data-test="component-app">
-      <div data-test="counter-display">{counter}</div>
-      <button data-test="increment-button" onClick={handleIncrement}>
-        +
-      </button>
+      <h1>Jotto</h1>
+      <Congrats success={true}></Congrats>
+      <GuessedWords
+        guessedWords={[{ guessedWord: 'train', letterMatchCount: 3 }]}
+      ></GuessedWords>
     </div>
   )
 }
